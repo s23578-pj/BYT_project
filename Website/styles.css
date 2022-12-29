@@ -1,0 +1,71 @@
+html, body {
+padding: 0%;
+background-size: 100% 100%;
+display: flex;
+flex-direction: column;
+align-items: center;
+text-align: center;
+background-color: var(--bg-color);
+color: var(--text-color);
+}
+header{
+
+
+}
+[data-mode='light']{
+    --bg-color: #eee;
+    --heading-color: #000;
+    --text-color: #333;
+    --link-color: #06e;
+    --btn-color: #333;
+    transition: background-color 0.5s, color 0.5s;
+}
+
+[data-mode='dark']{
+    --bg-color: #333;
+    --heading-color: #fff;
+    --text-color: #ddd;
+    --link-color: #0e6;
+    --btn-color: #ddd;
+    transition: background-color 0.5s, color 0.5s;
+}
+
+button{
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    width: 80px;
+    height: 80px;
+    border-radius: 6px;
+    cursor: pointer;
+    color: #eee;
+    background-color: var(--btn-color);
+}
+
+main {
+
+}
+aside{
+
+}
+a {
+    text-decoration: none;
+    color: var(--link-color);
+}
+
+/* Camera view section - stylist */
+.flex-container {
+    display: flex; /* or inline-flex */
+    margin: 1rem;
+    margin-top: 2rem;
+    direction: flex;
+    flex-direction:row;
+    justify-content: space-around;
+    gap: 20px;
+    flex-wrap: wrap
+}
+.flex--item {
+    padding: 1rem;
+    background-color: #6d7bff;
+    flex-shrink: 2;
+}
