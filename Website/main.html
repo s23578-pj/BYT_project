@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <meta charset="utf-8">
+    <?php
+        session_start();
+        $conn = new mysqli("localhost", "root", "", "login_db") or die("error");
+        ?>
+
+</head>
+
+<body data-mode="light">
+    <header>
+        <h1>
+            <p>Welcome on DFA Site<b>
+                    <?=$_SESSION['email']?>
+                </b>!!</p>
+        </h1>
+        <button id="darkmode"> Dark mode</button>
+        <script>
+            const body = document.querySelector('body')
+            const btn = document.querySelector('button')
+
+            //Darkmode function activate on button press
+            const handleDarkMode = () => {
+                if (body.getAttribute('data-mode') === 'light') {
+                    body.setAttribute('data-mode', 'dark')
+                    btn.style.color = "black";
+                    document.querySelector('#darkmode').innerHTML = "Light mode"
+                } else {
+                    body.setAttribute('data-mode', 'light')
+                    btn.style.color = "white";
+                    document.querySelector('#darkmode').innerHTML = "Dark mode"
+                }
+            }
+
+            btn.addEventListener('click', handleDarkMode)
+
+        </script>
+        <script>
+
+            //Function that makes switching visibility of Developing Team avatars.
+            function visible_element() {
+                var switching_visibility_Account = document.getElementById("Account");
+                if (switching_visibility_Account.style.display === "block") {
+                    switching_visibility_Account.style.display = "none";
+                } else {
+                    switching_visibility_Account.style.display = "block";
+                }
+            }
+        </script>
+        <script>
+
+            //Function that makes switching visibility of Developing Team avatars.
+            function visible_element2() {
+                var switching_visibility_Settings = document.getElementById("Settings");
+                if (switching_visibility_Settings.style.display === "block") {
+                    switching_visibility_Settings.style.display = "none";
+                } else {
+                    switching_visibility_Settings.style.display = "block";
+                }
+            }
+        </script>
+        <script>
+
+            //Function that makes switching visibility of Developing Team avatars.
+            function visible_element2_2() {
+                var switching_visibility_Settings = document.getElementById("Settings2");
+                if (switching_visibility_Settings.style.display === "block") {
+                    switching_visibility_Settings.style.display = "none";
+                } else {
+                    switching_visibility_Settings.style.display = "block";
+                }
+            }
+        </script>
+        <script>
+
+            //Function that makes switching visibility of Developing Team avatars.
+            function visible_element3() {
+                var switching_visibility_Info = document.getElementById("Info");
+                if (switching_visibility_Info.style.display === "block") {
+                    switching_visibility_Info.style.display = "none";
+                } else {
+                    switching_visibility_Info.style.display = "block";
+                }
+            }
+        </script>
+
+    </header>
+    <main>
+        <h3>Camera_view_point:Cam#1</h3>
+        <div class="flex-container">
+            <div class="flex--item">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/Cp4RRAEgpeU" title="Rovaniemi"
+                    frameborder="2"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+                    <form onsubmit="showSaveMessage()" class="cam-setting-style" id="Settings" hidden>
+                        <label for="slider1"><b>Camera</b></label> <br><br>
+                        <label for="camera">Photo Quality</label>
+                        <select id="cam" name="cam">
+                            <option value="auto">Auto</option>
+                            <option value="best">Best</option>
+                            <option value="normal">Normal</option>
+                            <option value="lowest">Lowest</option>
+                        </select><br>
+                        <label for="slider2">Interval(s)</label>
+                        <input type="range" style="width: 20%" min="1" max="3" value="1" class="slider" id="slider1">
+                        <span id="slider1-value"></span>s<br>
+                        
+                        <label for="slider2">Photo series:</label>
+                        <input type="range" style="width: 20%" min="1" max="5" value="1" class="slider" id="slider2">
+                        <span id="slider2-value"></span><br><br>
+    
+                        <label for="slider1"><b>Video</b></label> <br><br>
+                        <label for="video">Video Quality</label>
+                        <select id="cam" name="vid">
+                            <option value="auto">Auto</option>
+                            <option value="best">Best</option>
+                            <option value="normal">Normal</option>
+                            <option value="lowest">Lowest</option>
+                        </select><br>
+                        <label for="slider3">Video length(s):</label>
+                        <input type="range"style="width: 20%"  min="1" max="10" value="1" class="slider" id="slider3">
+                        <span id="slider3-value"></span>s<br>
+                        <input type="submit" value="Save">
+                      </form>
+            </div>
+            <h3>Camera_view_point:Cam#2</h3>
+            <form>
+              
+              </form>
+        </div>
+        <div class="flex-container">
+            <div class="flex--item">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/3vOhCL4l0VY" title="Park Zdrojowy"
+                    frameborder="2"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+                    <form onsubmit="showSaveMessage()" class="cam-setting-style" id="Settings2" hidden>
+                        <label for="slider1"><b>Camera</b></label> <br><br>
+                        <label for="camera">Photo Quality</label>
+                        <select id="cam" name="cam">
+                            <option value="auto">Auto</option>
+                            <option value="best">Best</option>
+                            <option value="normal">Normal</option>
+                            <option value="lowest">Lowest</option>
+                        </select><br>
+                        <label for="slider1">Interval(s)</label>
+                        <input type="range" style="width: 20%" min="1" max="3" value="1" class="slider" id="slider4">
+                        <span id="slider4-value"></span>s<br>
+                        
+                        <label for="slider2">Photo series:</label>
+                        <input type="range" style="width: 20%" min="1" max="5" value="1" class="slider" id="slider5">
+                        <span id="slider5-value"></span><br><br>
+    
+                        <label for="slider1"><b>Video</b></label> <br><br>
+                        <label for="video">Video Quality</label>
+                        <select id="cam" name="vid">
+                            <option value="auto">Auto</option>
+                            <option value="best">Best</option>
+                            <option value="normal">Normal</option>
+                            <option value="lowest">Lowest</option>
+                        </select><br>
+                        <label for="slider1">Video length(s):</label>
+                        <input type="range"style="width: 20%"  min="1" max="10" value="1" class="slider" id="slider6">
+                        <span id="slider6-value"></span>s<br>
+                        <input type="submit" value="Save">
+                      </form>
+            </div>
+        </div><br>
+    </main>
+    <script>
+        function showSaveMessage() {
+          alert("We have saved settings to Camera. Be patient, it may take a while for the settings to update ");
+        }
+        </script>
+    <nav data-mode="light" role="navigation">
+        <div id="menuToggle">
+            <!--
+          A fake / hidden checkbox is used as click reciever,
+          so you can use the :checked selector on it.
+          -->
+            <input type="checkbox" />
+
+            <!--
+          Some spans to act as a hamburger.
+          
+          They are acting like a real hamburger,
+          not that McDonalds stuff.
+          -->
+            <span></span>
+            <span></span>
+            <span></span>
+
+
+            <!--
+          Too bad the menu has to be inside of the button
+          but hey, it's pure CSS magic.
+          -->
+            <ul id="menu">
+                <a href="#" onclick="visible_element();">
+                    <li>Account</li>
+                </a>
+                <div id="Account" hidden>
+                    <ol>
+                        <li> <a onclick="openModal()" id="gallery_content">Gallery</li> </a>
+                        <li><a href="php-login-main/account_delete.php"> Delete account</a></li>
+                        <li><a href="php-login-main/log-out.php">Log out</a></li>
+                    </ol>
+                </div>
+                <a href="#" onclick="visible_element2();visible_element2_2();">
+                    <li>Settings</li>
+                </a>
+                <!-- <form>
+                    <div class="slidecontainer">
+                        <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+                        <p>Value: <span id="demo"></span></p>
+                      </div>
+                </form> -->
+                <a href="#" onclick="visible_element3();">
+                    <li>Info</li>
+                </a>
+                <div id="Info" hidden>
+                    <img src="\Website\avatars\taikun.jpg" width="50px" height="50px" alt="Krzysztof Szczypior"
+                        style="border-radius: 50%" title="Krzysztof Szczypior" onclick="openModal();currentSlide(9)"
+                        class="hover-shadow cursor">
+                    <img src="\Website\avatars\Daniel.png" width="50px" height="50px" alt="Daniel Klimowski"
+                        style="border-radius: 50%" title="Daniel Klimowski" onclick="openModal();currentSlide(10)"
+                        class="hover-shadow cursor">
+                    <img src="\Website\avatars\Mateusz.png" width="50px" height="50px" alt="Mateusz Olstowski"
+                        style="border-radius: 50%" title="Mateusz Olstowski" onclick="openModal();currentSlide(11)"
+                        class="hover-shadow cursor">
+                    <img src="\Website\avatars\Oliwier.png" width="50px" height="50px" alt="Oliwier Kossak"
+                        style="border-radius: 50%" title="Oliwier Kossak" onclick="openModal();currentSlide(12)"
+                        class="hover-shadow cursor">
+                </div>
+                <a href="mailto:dfasystem692137@gmail.com?subject=Mail from our Website" target="_blank">
+                    <li>Contact </li>
+                </a>
+
+
+            </ul>
+        </div>
+        </div>
+    </nav>
+    <div id="myModal" class="modal">
+        <span class="close cursor" onclick="closeModal()">&times;</span>
+        <div class="modal-content">
+
+            <div class="mySlides">
+                <div class="numbertext">1 / 7</div>
+                <img src="\Website\galerry\DFA_construction_first_attepts.jpg" style="width:100%; height:10%">
+            </div>
+
+            <div class="mySlides">
+                <div class="numbertext">2 / 7</div>
+                <img src="\Website\galerry\camera-positioning_darkmode-initialization.jpg" style="width:100%">
+            </div>
+
+            <div class="mySlides">
+                <div class="numbertext">3 / 7</div>
+                <img src="\Website\galerry\DFA_detected-cars-from-100meters.jpg" style="width:100%">
+            </div>
+
+            <div class="mySlides">
+                <div class="numbertext">4 / 7</div>
+                <img src="\Website\galerry\photo-detection_test.png" style="width:100%">
+            </div>
+
+            <div class="mySlides">
+                <div class="numbertext">5 / 7</div>
+                <img src="\Website\galerry\frame_detected-car.png" style="width:100%">
+            </div>
+
+            <div class="mySlides">
+                <div class="numbertext">6 / 7</div>
+                <img src="\Website\galerry\photo-6_8.png" style="width:100%">
+            </div>
+
+            <div class="mySlides">
+                <div class="numbertext">7 / 7</div>
+                <img src="\Website\galerry\photo-7_7.png" style="width:100%">
+            </div>
+
+            <div class="mySlides">
+                <img src="\Website\avatars\Krzysztof_description.png" style="width:100%">
+            </div>
+            <div class="mySlides">
+                <img src="\Website\avatars\Daniel_description.png" style="width:100%">
+            </div>
+            <div class="mySlides">
+                <img src="\Website\avatars\Mateusz_description.png" style="width:100%">
+            </div>
+            <div class="mySlides">
+                <img src="\Website\avatars\Oliwier_description.png" style="width:100%">
+            </div>
+
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+            <div class="caption-container">
+                <p id="caption"></p>
+            </div>
+        </div>
+        <?php
+            session_start();
+          ?>
+        <script>
+var sliders = document.getElementsByClassName("slider");
+for (var i = 0; i < sliders.length; i++) {
+  let slider = sliders[i];
+  let output = document.getElementById(slider.id + "-value");
+  output.innerHTML = slider.value;
+  
+  slider.oninput = function() {
+    output.innerHTML = this.value;
+  }
+}
+        </script>
+        <script>
+            function openModal() {
+                document.getElementById("myModal").style.display = "block";
+            }
+
+            function closeModal() {
+                document.getElementById("myModal").style.display = "none";
+            }
+
+            var slideIndex = 1;
+            showSlides(slideIndex);
+
+            function plusSlides(n) {
+                showSlides(slideIndex += n);
+            }
+
+            function currentSlide(n) {
+                showSlides(slideIndex = n);
+            }
+
+            function showSlides(n) {
+                var i;
+                var slides = document.getElementsByClassName("mySlides");
+                var dots = document.getElementsByClassName("demo");
+                var captionText = document.getElementById("caption");
+                if (n > slides.length) { slideIndex = 1 }
+                if (n < 1) { slideIndex = slides.length }
+                for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";
+                }
+                for (i = 0; i < dots.length; i++) {
+                    dots[i].className = dots[i].className.replace(" active", "");
+                }
+                slides[slideIndex - 1].style.display = "block";
+                dots[slideIndex - 1].className += " active";
+                captionText.innerHTML = dots[slideIndex - 1].alt;
+            }
+        </script>
+</body>
+
+</html>
